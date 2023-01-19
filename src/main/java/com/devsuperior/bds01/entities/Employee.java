@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.devsuperior.bds01.dto.EmployeeDTO;
+
 @Entity
 @Table(name = "tb_employee")
 public class Employee {
@@ -30,6 +32,11 @@ public class Employee {
 		this.name = name;
 		this.email = email;
 		this.department = department;
+	}
+	
+	public Employee(EmployeeDTO dto) {
+		this.name = dto.getName();
+		this.email = dto.getEmail();
 	}
 
 	public Long getId() {
